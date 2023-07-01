@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/* font-family: 'Lexend Deca',sans-serif; */
+/* font-family: 'Big Shoulders Display',cursive; */
+:root{
+    --orange:hsl(31, 77%, 52%);
+    --DarkCyan:hsl(184, 100%, 22%);
+    --VDarkCyan:hsl(179, 100%, 13%);
+    --VLightGray:hsl(0, 0%, 95%); /*background, headings, buttons*/
+    --TransparentWhite:hsla(0, 0%, 100%, 0.75); /*Paragraphs*/
+}
+::-webkit-scrollbar{
+    display:none;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;    
+}
+body{
+    background: var(--VLightGray);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    min-height:100vh;
+    width:100%;
+}
+.left,.right,.center{
+    min-height:28rem;
+    max-width:17rem;
+    display:flex;
+    flex-flow:row wrap;
+    padding:40px;
+}
+.left>*,.center>*,.right>*{
+    flex-basis:100%;
+    /* background: red; */
+}
+.left{
+    background: var(--orange);
+    border-radius:10px 0 0 10px;
+}
+.center{
+    background:var(--DarkCyan)
+}
+.right{
+    background:var(--VDarkCyan);
+    border-radius:0 10px 10px 0;
+}
+.heading{
+    color:var(--VLightGray);
+    font-family: 'Big Shoulders Display', cursive;
+    text-transform: uppercase;
+    font-size:30px;
+}
+.text{
+    font-family: 'Lexend Deca',sans-serif;
+    font-size: 15px;
+    color:var(--TransparentWhite);
+    line-height:25px;
+}
+.button{
+    height:fit-content;
+    flex-basis:auto;
+    background-color: var(--VLightGray);
+    align-self:end;
+    padding:13px 23px 13px 23px ;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size:15px;
+    text-align:center;
+    white-space: nowrap;
+}
+.Lbutton{
+    color:var(--orange);
+}
+.Cbutton{
+    color:var(--DarkCyan);
+}
+.Rbutton{
+    color:var(--VDarkCyan);
+}
+.button:hover{
+    transition: 1s ease-in;
+    color:white;
+    background: transparent;
+    cursor: pointer;
+}
+@media screen and (max-width:375px) {
+    body{
+        flex-direction:column;
+        margin:100px auto 100px auto;
+    }
+
+    .left{
+        border-radius: 10px 10px 0 0;
+    }
+    .right{
+        border-radius: 0 0 10px 10px;
+    }
+}
